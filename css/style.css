@@ -1,0 +1,33 @@
+*{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: whitesmoke;
+}
+
+h1, h2, h3, h4{
+    font-family: ;
+}
+
+button{
+    font-family: ;
+}
+
+p{
+    font-family: ;
+    font-size: ;
+}
+
+i{
+    font-size: ;
+}
+
+/*----------------------------HEADER-----------------------------------------------*/
+
+/*----------------------------BODY-----------------------------------------------*/
+
+/*----------------------------FOOTER-----------------------------------------------*/
