@@ -1,0 +1,194 @@
+/* Style spécifique pour la page conseil.php */
+.conseil-page header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+
+.conseil-page header ul{
+    width: 70%;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+      }
+
+      
+/* carousel */
+
+
+.carousel {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-container {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 300%;
+}
+
+.slide {
+    min-width: 100%;
+    position: relative;
+}
+
+.slide img {
+    width: 100vw;
+    height: 90vh;
+    object-fit: cover;
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    background: white;
+    color: black;
+    width: 15%;
+    border-radius: 20px;
+    padding: 60px;
+    text-align: left;
+    margin-bottom: 152px;
+    margin-left: 100px;
+    font-size: 20px;
+}
+
+button {
+    background: #000091;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background: #000091;
+}
+
+/* Flèches de navigation */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+.prev:hover, .next:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+/* Indicateurs */
+.dots {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.dot {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background: #bbb;
+    border-radius: 50%;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.dot.active {
+    background: #555;
+}
+
+/* Conseil */
+
+.section {
+    max-width: 1100px;
+    margin: 50px auto;
+    padding: 35px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(120, 41, 41, 0.1);
+  
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+p {
+    margin-bottom: 20px;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+img {
+    width: 40%;
+    border-radius: 10px;
+}
+
+ul {
+    list-style: none;
+    width: 60%;
+}
+
+li {
+    margin-bottom: 15px;
+}
+
+h3 {
+    font-size: 18px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #000091;;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.btn:hover {
+    background: #333;
+}
+
+/* SECTION FOND SOMBRE */
+.dark {
+    background: #121212;
+    color: white;
+}
+
+.dark .btn {
+    background: white;
+    color:#000091;;
+}
+
+.dark img {
+    width: 50%;
+}
+

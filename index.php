@@ -1,96 +1,57 @@
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accueil</title>
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-    <section class="section-1">
-        <?php require'header.php';?>
-        <article class="title-section-1">
-        <h4>Feel The Experience</h4>
-        <h1>Explore The Majestic Asia Landscape Now</h1>
-        <button>Get started</button>
-        </article>
-        <article class="content-section-1">
-            <article class="text-section-1">
-                <i class='bx bx-time-five' ></i>
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et</p>
-            </article>
-            <article class="text-section-1">
-                <i class='bx bx-error' ></i>
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et</p>
-            </article>
-        </article>
-    </section>
+<?php
+/**
+ * The main template file
+ *
+ * This is the most generic template file in a WordPress theme
+ * and one of the two required files for a theme (the other being style.css).
+ * It is used to display a page when nothing more specific matches a query.
+ * E.g., it puts together the home page when no home.php file exists.
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ *
+ * @package SAE303
+ */
 
-    <section class="section-2">
-    <article class="img-section-3" style="background-image:;">
-        <article class="img-content-section-3">
-            <h4>Grand Palace</h4>
-            <p>Bagkok, Thailand</p>
-        </article>
-       <i class='bx bx-right-top-arrow-circle'></i>
-    </article>
+get_header();
+?>
 
-    <article class="img-section-3" style="background-image:;">
-        <article class="img-content-section-3">
-            <h4>Grand Palace</h4>
-            <p>Bagkok, Thailand</p>
-        </article>
-       <i class='bx bx-right-top-arrow-circle'></i>
-    </article>
+	<main id="primary" class="site-main">
 
-    <article class="img-section-3" style="background-image:;">
-        <article class="img-content-section-3">
-            <h4>Grand Palace</h4>
-            <p>Bagkok, Thailand</p>
-        </article>
-       <i class='bx bx-right-top-arrow-circle'></i>
-    </article>
+		<?php
+		if ( have_posts() ) :
 
-    <article class="img-section-3" style="background-image:;">
-        <article class="img-content-section-3">
-            <h4>Grand Palace</h4>
-            <p>Bagkok, Thailand</p>
-        </article>
-       <i class='bx bx-right-top-arrow-circle'></i>
-    </article>
-    </section>
+			if ( is_home() && ! is_front_page() ) :
+				?>
+				<header>
+					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
+				</header>
+				<?php
+			endif;
 
-    <section class="section-3">
-        <article class="title-section-3">
-            <h3>Experience The New Adventure</h3>
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis,</p>
-        </article>
+			/* Start the Loop */
+			while ( have_posts() ) :
+				the_post();
 
-        <article class="icon-section-3">
-            <i class='bx bx-shield-plus' ></i>
-            <article  class="content-section-3">
-                <h4>Safe Travelling</h4>
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et</p>
-            </article>
-        </article>
+				/*
+				 * Include the Post-Type-specific template for the content.
+				 * If you want to override this in a child theme, then include a file
+				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
+				 */
+				get_template_part( 'template-parts/content', get_post_type() );
 
-        <article class="icon-section-3">
-            <i class='bx bx-money' ></i>
-            <article class="content-section-3">
-                <h4>Safe Travelling</h4>
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et</p>
-            </article>
-        </article>
+			endwhile;
 
-        <article class="icon-section-3">
-            <i class='bx bx-home-alt-2' ></i>
-            <article class="content-section-3">
-                <h4>Safe Travelling</h4>
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et</p>
-            </article>
-        </article>
-        <img src="" alt="">
-    </section>
+			the_posts_navigation();
 
-</body>
-</html>
+		else :
+
+			get_template_part( 'template-parts/content', 'none' );
+
+		endif;
+		?>
+
+	</main><!-- #main -->
+
+<?php
+get_sidebar();
+get_footer();
